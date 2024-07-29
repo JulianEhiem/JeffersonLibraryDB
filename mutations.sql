@@ -10,7 +10,10 @@ USE JeffersonLibrary;
         @dob                date,
         @phone              varchar(15),
         @email              varchar(50),
-        @todaysdate         date
+        @todaysdate         date,
+        @book_id            int,
+        @member_id          int,
+        @author_id          int
         
 
 SET @todaysdate = CONVERT(DATE, GETDATE());
@@ -41,5 +44,13 @@ VALUES (@firstName, @lastName, @dob, @phone, @email, @todaysdate)
 -- ================================================================
 -- Delete Mutations
 -- ================================================================
+
+-- Books
+DELETE FROM Books
+WHERE book_id = @book_id
+
+-- Member
+DELETE FROM Members
+WHERE memberId = @member_id
 
 END;
