@@ -12,8 +12,7 @@ USE JeffersonLibrary;
         @email              varchar(50),
         @todaysdate         date,
         @book_id            int,
-        @member_id          int,
-        @author_id          int
+        @member_id          int
         
 
 SET @todaysdate = CONVERT(DATE, GETDATE());
